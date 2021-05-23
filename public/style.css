@@ -7,11 +7,23 @@
 /* ANIMATIONS */
 @keyframes card {
     0% {
-        top: 80vh;
+        top: 50vh;
         background-color: rgba(255, 255, 255, 0.1);
     }
     100% {
-        top: 50vh;
+        top: 80vh;
+    }
+}
+
+@keyframes background {
+    0% {
+        
+    }
+    50% {
+        filter: blur(0px);
+    }
+    100% {
+        filter: blur(5px)
     }
 }
 
@@ -28,6 +40,19 @@ aside {
     position: relative;
     /* background-color: rgba(0, 0, 0, 0.5); */
     text-align: center;
+    /* background-image: url("/personal-website/public/images/john-pic.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+aside::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
     background-image: url("/personal-website/public/images/john-pic.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -98,13 +123,14 @@ a:hover {
 
 .aside-contents {
     /* border: solid 1px purple; */
-    width: 100vw;
+    width: 51vw;
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.7);
     animation: card 4s ease-in-out;
+    white-space: nowrap;
 }
 
 .section-contents {
@@ -120,11 +146,23 @@ a:hover {
     padding-top: 20px;
 }
 
+.background-blur {
+    width: 100%;
+    height: 100%;
+    animation: background 4s;
+}
+
 /* TABLET SCREEN STYLING */
 @media only screen and (max-width: 1200px) {
     aside {
+        margin: 0;
+        padding: 0;
         width: 100%;
-        height: 40vh;
+        height: 50vh;
+    }
+
+    aside::before {
+        transform: translate(0, -25%);
     }
 
     section {
@@ -138,11 +176,13 @@ a:hover {
 
     .aside-contents {
         /* border: solid 1px purple; */
-        width: auto;
+        width: 100vw;
         position: static;
         top: auto;
         left: auto;
-        transform: translate(0, 50%);        
+        transform: translate(0, 234%);
+        background-color: rgba(0, 0, 0, .25);
+        animation: unset;
     }
     
     .section-contents {
@@ -158,6 +198,8 @@ a:hover {
 /* MOBILE STYLING */
 @media only screen and (max-width: 600px) {
     aside {
+        margin: 0;
+        padding: 0;
         width: 100%;
         height: 40vh;
     }
@@ -168,30 +210,41 @@ a:hover {
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
     }
 
     h3 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .flex-container {
         display: inline-block;
     }
 
+    p {
+        font-size: 0.85rem;
+    }
+
     .aside-contents {
         /* border: solid 1px purple; */
+        padding-top: 0 !important; /* find where the padding-top is coming from elsewhere */
         width: auto;
         position: static;
         top: auto;
         left: auto;
-        transform: translate(0, -50%);
+        transform: translate(0, 260%);
         padding-top: 50%;
-        
+        animation: card 4s;
+        background-color: rgba(255, 255, 255, 0.7);
     }
     
     .section-contents {
         /* border: solid 1px purple; */
+        margin-top: 50px;
         width: auto;
         position: static;
         top: auto;
