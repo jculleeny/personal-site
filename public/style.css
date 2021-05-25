@@ -53,9 +53,10 @@ aside::before {
     top: 0;
     left: 0;
     z-index: -1;
-    background-image: url("/personal-website/public/images/john-pic.jpg");
+    background-image: url("/personal-site/public/images/john-pic.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    filter: contrast(115%);
 }
 
 section {
@@ -180,8 +181,8 @@ a:hover {
         position: static;
         top: auto;
         left: auto;
-        transform: translate(0, 234%);
-        background-color: rgba(0, 0, 0, .25);
+        transform: translate(0, 201%);
+        background-color: rgba(0, 0, 0, 0);
         animation: unset;
     }
     
