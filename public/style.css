@@ -136,11 +136,21 @@ a:hover {
 
 .section-contents {
     /* border: solid 1px purple; */
-    width: 50%;
+    width: 90%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.about-me-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me {
+    width: 70%;
 }
 
 .icons {
@@ -151,6 +161,30 @@ a:hover {
     width: 100%;
     height: 100%;
     animation: background 4s;
+}
+
+.portfolio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+}
+
+.portfolio li {
+    display: inline-block;
+    list-style: none;
+}
+
+.portfolio img {
+    max-width: 90%;
+    max-height: 20vh;
+    margin: 10px;
+    filter: grayscale(1);
+    border-radius: 20px;
+}
+
+.portfolio img:hover {
+    filter:grayscale(0);
 }
 
 /* TABLET SCREEN STYLING */
@@ -198,6 +232,10 @@ a:hover {
 
 /* MOBILE STYLING */
 @media only screen and (max-width: 600px) {
+    body {
+        margin-bottom: 15vh;
+    }
+    
     aside {
         margin: 0;
         padding: 0;
