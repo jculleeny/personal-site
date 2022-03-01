@@ -53,7 +53,7 @@ aside::before {
     top: 0;
     left: 0;
     z-index: -1;
-    background-image: url("/personal-site/public/images/john-pic.jpg");
+    background-image: url("/public/images/john-pic.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     filter: contrast(115%);
